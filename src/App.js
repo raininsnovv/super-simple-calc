@@ -1,23 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  let [total, setTotal] = useState();
+  const [numberOne, setNumberOne] = useState();
+  const [numberTwo, setNumberTwo] = useState();
+  const handlePlus = () => {
+    if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
+      total = setTotal(Number(numberOne) + Number(numberTwo));
+    } else setTotal("Change number!!!");
+  };
+  const handleMinus = () => {
+    if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
+      total = setTotal(Number(numberOne) - Number(numberTwo));
+    } else setTotal("Change number!!!");
+  };
+  const handleMultiply = () => {
+    if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
+      total = setTotal(Number(numberOne) * Number(numberTwo));
+    } else setTotal("Change number!!!");
+  };
+  const handleDivide = () => {
+    if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
+      total = setTotal(Number(numberOne) / Number(numberTwo));
+    } else setTotal("Change number!!!");
+  };
+
+  const handleChangeOne = (e) => {
+    setNumberOne(e.target.value);
+  };
+  const handleChangeTwo = (e) => {
+    setNumberTwo(e.target.value);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input
+        type="number"
+        value={numberOne}
+        onChange={handleChangeOne}
+        placeholder="Write number a"
+      />
+      <input
+        type="number"
+        value={numberTwo}
+        onChange={handleChangeTwo}
+        placeholder="Write number b"
+      />
+      <div>
+        <button onClick={handlePlus}>plus</button>
+        <button onClick={handleMinus}>minus</button>
+        <button onClick={handleMultiply}>multiply</button>
+        <button onClick={handleDivide}>divide</button>
+      </div>
+      <div>
+        <span>{total}</span>
+      </div>
     </div>
   );
 }
