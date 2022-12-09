@@ -7,22 +7,22 @@ function App() {
   const [numberTwo, setNumberTwo] = useState();
   const handlePlus = () => {
     if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
-      total = setTotal(Number(numberOne) + Number(numberTwo));
+      setTotal(Number(numberOne) + Number(numberTwo));
     } else setTotal("Change number!!!");
   };
   const handleMinus = () => {
     if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
-      total = setTotal(Number(numberOne) - Number(numberTwo));
+      setTotal(Number(numberOne) - Number(numberTwo));
     } else setTotal("Change number!!!");
   };
   const handleMultiply = () => {
     if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
-      total = setTotal(Number(numberOne) * Number(numberTwo));
+      setTotal(Number(numberOne) * Number(numberTwo));
     } else setTotal("Change number!!!");
   };
   const handleDivide = () => {
     if (numberOne[0] !== "0" && numberTwo[0] !== "0") {
-      total = setTotal(Number(numberOne) / Number(numberTwo));
+      setTotal(Number(numberOne) / Number(numberTwo));
     } else setTotal("Change number!!!");
   };
 
